@@ -1,0 +1,21 @@
+@model chefsNdishes.Models.Chef
+<div class="container addchef">
+<form asp-action="AddChef" asp-controller="Home" method="POST">
+    <h2 class="text-center">Add Chef!</h2>
+    <br>
+    <label>First Name</label>
+    <input class="form-control" asp-for="FName" placeholder="First Name">
+    <span style="color: red;" asp-validation-for="FName"></span>
+    <br>
+    <label>Last Name</label>
+    <input class="form-control" asp-for="LName" placeholder="Last Name">
+    <span style="color: red;" asp-validation-for="LName"></span>
+    <br>
+    <label>Birthday</label>
+    <input type="date" class="form-control col-4" asp-for="Birthday">
+    <span style="color: red;" asp-validation-for="Birthday"></span>
+    <br>
+    <br>
+    <input type="submit" class="btn btn-primary">
+</form>
+</div>

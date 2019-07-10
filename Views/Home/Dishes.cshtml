@@ -1,0 +1,38 @@
+@using chefsNdishes.Models
+@model List<Dish>
+
+<br>
+<br>
+<div class="container table mx-auto">
+    <h1 class="text-center sp"><a href="/">Chefs</a> <b style="color: aliceblue; padding-left:20px; padding-right:20px">|</b> <a href="dishes">Dishes</a></h1>
+    <a href="dishes/new">Add a Dish</a>
+    <br>
+    <br>
+    <table class="table">
+    <thead class="thead-light text-center">
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Chef</th>
+        <th scope="col">Tastiness</th>
+        <th scope="col">Calories</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 1;
+        @foreach(var dish in @Model)
+        {
+            <tr>
+            <th scope="row">@i</th>
+            <td>@dish.Name</td>
+            <td>@dish.Creator.FName @dish.Creator.LName</td>
+            <td>@dish.Tastiness</td>
+            <td>@dish.Calories</td>
+            </tr>
+            i++;
+        }
+        }
+    </tbody>
+    </table> 
+</div>
